@@ -5,8 +5,16 @@
 
 build:
   variants:
-    - tag: latest
+    - tag: pkg
       containerfile: Containerfile
+      aliases:
+        - latest
+      default: true
+    - tag: pkg-latest
+      containerfile: Containerfile
+      args:
+        BASE_VERSION: "15.1-latest"
+
 
 cit:
   mode: screenshot
