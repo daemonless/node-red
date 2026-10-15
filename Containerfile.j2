@@ -1,8 +1,6 @@
 ARG BASE_VERSION=15.1
 FROM ghcr.io/daemonless/base:${BASE_VERSION}
 
-ARG NODERED_VERSION=5.0.8
-
 ARG FREEBSD_ARCH=amd64
 ARG UPSTREAM_URL="https://api.github.com/repos/node-red/node-red/releases/latest"
 ARG UPSTREAM_JQ=".tag_name"
@@ -32,7 +30,8 @@ ENV NODERED_HOME "/config"
 
 ENV NODE_ENV production
 
-RUN pkg update && pkg install -y python3 ${PACKAGES} && \
+RUN pkg update && pkg install -y ${PACKAGES} && \
+    NODERED_VERSION=$(npm view node-red version) && \
     npm install -g node-red@${NODERED_VERSION} && \
 		mkdir -p /app && echo "${NODERED_VERSION}" > /app/version && chmod -R a+rX /app && \
     pkg clean -a && \

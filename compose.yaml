@@ -39,7 +39,7 @@ services:
       - TZ=UTC
 
     volumes:
-      - /config:/config
+      - /path/to/containers/node-red:/config
 
     ports:
       - "1880:1880"
