@@ -1,0 +1,45 @@
+name: node-red
+
+x-daemonless:
+  title: "Node-RED"
+  category: "Utilities"
+  description: "Low-code programming for event-driven applications on FreeBSD."
+  upstream_url: "https://github.com/node-red/node-red"
+  web_url: "https://nodered.org/"
+  user: "bsd"
+  icon: ":node-red:"
+  mlock: false
+  upstream_binary: true
+
+  appjail:
+    director:
+      options:
+        - "alias:"
+        - "ip4_inherit:"
+ 
+  docs:
+    env:
+      PUID: "User ID for the application process"
+      PGID: "Group ID for the application process"
+      TZ: "Timezone for the container"
+    volumes:
+      /config: "Data and configuration directory"
+    ports:
+      1880: "Node-RED port"
+
+services:
+  node-red:
+    image: ghcr.io/daemonless/node-red:latest
+    container_name: node-red
+    restart: unless-stopped
+    
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
+
+    volumes:
+      - /path/to/containers/node-red:/config
+
+    ports:
+      - "1880:1880"

@@ -1,0 +1,4 @@
+#!/bin/sh
+# Daemonless standard healthcheck for node-red
+
+fetch -qo /dev/null "http://127.0.0.1:1880/" >/dev/null 2>&1
