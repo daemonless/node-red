@@ -1,0 +1,11 @@
+#!/bin/sh
+# Start node-red; /init has already dropped to the run user.
+
+export HOME=/config
+
+echo "[INFO] Starting node-red..."
+
+cd /config
+exec \
+    /usr/local/bin/node-red \
+		-p 1880 -u ${HOME}

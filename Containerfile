@@ -5,7 +5,7 @@
 # --------------------------------------------------------------------------
 
 ARG BASE_VERSION=15.1
-FROM ghcr.io/daemonless/base:${BASE_VERSION}
+FROM ghcr.io/daemonless/base-exec:${BASE_VERSION}
 
 ARG FREEBSD_ARCH=amd64
 ARG UPSTREAM_URL="https://api.github.com/repos/node-red/node-red/releases/latest"
@@ -31,7 +31,6 @@ LABEL org.opencontainers.image.title="Node-RED" \
       io.daemonless.healthcheck-url="${HEALTHCHECK_ENDPOINT}" \
       io.daemonless.packages="${PACKAGES}"
 
-
 ENV NODERED_HOME "/config"
 
 ENV NODE_ENV production
@@ -55,5 +54,8 @@ VOLUME "${NODERED_HOME}"
 EXPOSE 1880
 
 COPY root/ /
+RUN chmod +x /daemonless/libexec/node-red
 
-RUN chmod +x /etc/services.d/node-red/run /healthz
+CMD ["/daemonless/libexec/node-red"]
+
+RUN chmod +x /healthz
