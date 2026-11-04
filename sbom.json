@@ -1,11 +1,11 @@
 {
-  "generated": "2026-11-03T12:05:16Z",
+  "generated": "2026-11-04T13:26:55Z",
   "image": "node-red",
   "tags": {
     "pkg": {
       "app_version": "5.0.9",
       "arch": "amd64",
-      "generated": "2026-11-03T12:04:11Z",
+      "generated": "2026-11-04T13:26:05Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -2332,7 +2332,7 @@
     "pkg-latest": {
       "app_version": "5.0.9",
       "arch": "amd64",
-      "generated": "2026-11-03T12:04:16Z",
+      "generated": "2026-11-04T13:25:12Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -2751,7 +2751,7 @@
               "ART20"
             ],
             "name": "npm-node24",
-            "version": "12.2.0"
+            "version": "12.2.1"
           },
           {
             "licenses": [
@@ -2787,7 +2787,7 @@
               "APACHE20"
             ],
             "name": "simdjson",
-            "version": "5.0.5"
+            "version": "5.1.0"
           },
           {
             "licenses": [
@@ -2888,7 +2888,7 @@
           {
             "name": "@npmcli/arborist",
             "purl": "",
-            "version": "10.0.3"
+            "version": "10.0.4"
           },
           {
             "name": "@npmcli/config",
@@ -3653,7 +3653,7 @@
           {
             "name": "http-cache-semantics",
             "purl": "",
-            "version": "4.2.0"
+            "version": "4.3.0"
           },
           {
             "name": "http-errors",
@@ -3713,7 +3713,7 @@
           {
             "name": "ip-address",
             "purl": "",
-            "version": "10.5.0"
+            "version": "10.7.2"
           },
           {
             "name": "ipaddr.js",
@@ -3823,7 +3823,7 @@
           {
             "name": "libnpmpack",
             "purl": "",
-            "version": "10.0.3"
+            "version": "10.0.4"
           },
           {
             "name": "libnpmpublish",
@@ -4198,7 +4198,7 @@
           {
             "name": "postcss-selector-parser",
             "purl": "",
-            "version": "7.1.4"
+            "version": "7.1.6"
           },
           {
             "name": "proc-log",
@@ -4538,7 +4538,7 @@
           {
             "name": "undici",
             "purl": "",
-            "version": "6.28.0"
+            "version": "6.29.0"
           },
           {
             "name": "undici-types",
